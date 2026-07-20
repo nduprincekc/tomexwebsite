@@ -1,0 +1,40 @@
+<svg width="600" height="620" viewBox="0 0 600 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="tomatoBody" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ff6b5e"/>
+      <stop offset="55%" stop-color="#e6392f"/>
+      <stop offset="100%" stop-color="#b8251d"/>
+    </radialGradient>
+    <radialGradient id="tomatoBody2" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ff7a6d"/>
+      <stop offset="55%" stop-color="#eb443a"/>
+      <stop offset="100%" stop-color="#c22a21"/>
+    </radialGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a9c4f"/>
+      <stop offset="100%" stop-color="#2d6b3f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- soft shadow blob -->
+  <ellipse cx="300" cy="560" rx="230" ry="34" fill="#1e4a26" opacity="0.08"/>
+
+  <!-- back tomato (large, upper) -->
+  <circle cx="330" cy="220" r="150" fill="url(#tomatoBody)"/>
+  <path d="M330 90 C315 60 285 55 265 70 C285 60 305 68 315 85 C320 60 350 52 375 68 C355 58 335 68 330 90Z" fill="url(#leafGrad)"/>
+  <ellipse cx="280" cy="170" rx="34" ry="22" fill="#ffffff" opacity="0.18"/>
+
+  <!-- mid tomato left -->
+  <circle cx="165" cy="360" r="115" fill="url(#tomatoBody2)"/>
+  <path d="M165 260 C152 236 128 232 112 244 C130 236 146 243 154 257 C158 236 182 230 202 243 C186 235 170 242 165 260Z" fill="url(#leafGrad)"/>
+  <ellipse cx="128" cy="330" rx="26" ry="17" fill="#ffffff" opacity="0.18"/>
+
+  <!-- front tomato right/bottom, biggest -->
+  <circle cx="360" cy="450" r="165" fill="url(#tomatoBody)"/>
+  <path d="M360 300 C344 272 314 267 293 282 C315 272 337 280 348 298 C352 272 384 264 411 280 C389 270 368 280 360 300Z" fill="url(#leafGrad)"/>
+  <ellipse cx="305" cy="400" rx="38" ry="24" fill="#ffffff" opacity="0.2"/>
+
+  <!-- small accent tomato -->
+  <circle cx="470" cy="270" r="58" fill="url(#tomatoBody2)"/>
+  <path d="M470 218 C462 205 448 203 439 210 C449 205 458 209 463 217 C466 204 483 200 496 208 C486 203 475 209 470 218Z" fill="url(#leafGrad)"/>
+</svg>

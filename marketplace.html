@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace — TOMEX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg class="tomato-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" stroke="#1e4a26" stroke-width="2"/>
+          <path d="M20 8c-3 3-3 7 0 10 3-3 3-7 0-10z" fill="#2d6b3f"/>
+          <circle cx="20" cy="24" r="6" fill="#e63946"/>
+          <path d="M8 20c4-6 20-6 24 0" stroke="#1e4a26" stroke-width="1.6" fill="none"/>
+        </svg>
+        <span class="tom">TOM</span><span class="ex">EX</span>
+      </span>
+      <span class="logo-tagline">Fresh. Fast. Trusted.</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="index.html#about">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-solid">Login</a>
+      <a href="onboarding.html" class="btn btn-outline">Sign up</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Marketplace</h1>
+    <p>Fresh tomato listings and cold storage space from verified farmers and warehouse operators.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar">
+      <span class="filter-chip active">All Listings</span>
+      <span class="filter-chip">Fresh Tomatoes</span>
+      <span class="filter-chip">Cold Storage</span>
+      <span class="filter-chip">Grade A</span>
+      <span class="filter-chip">Near Me</span>
+    </div>
+
+    <div class="marketplace-grid" id="listingsGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-mark">
+          <svg class="tomato-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#fff" stroke-width="2" opacity="0.6"/><circle cx="20" cy="24" r="6" fill="#e63946"/></svg>
+          <span style="color:#fff;">TOM<span style="color:#e63946;">EX</span></span>
+        </span>
+        <p>Reducing post-harvest tomato losses in Nigeria — one connection at a time.</p>
+      </div>
+      <div>
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="marketplace.html">Marketplace</a></li>
+          <li><a href="onboarding.html?role=farmer">Sell Tomatoes</a></li>
+          <li><a href="onboarding.html?role=logistics">Book Logistics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul><li><a href="index.html#about">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Account</h5>
+        <ul><li><a href="login.html">Login</a></li><li><a href="onboarding.html">Sign up</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TOMEX. All rights reserved.</span>
+      <span>Group 10 — TechyJaunt Sprint</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  // Sample listings — replace with real API data once Backend track's endpoints are live
+  const listings = [
+    { name: 'Grade A Roma Tomatoes', location: 'Kaduna', qty: '80 crates', price: '₦4,500 / crate', tag: 'Fresh' },
+    { name: 'Cherry Tomatoes — Bulk', location: 'Ibadan', qty: '45 crates', price: '₦6,200 / crate', tag: 'Fresh' },
+    { name: 'Cold Storage Space', location: 'Kano', qty: '500 crate capacity', price: '₦300 / crate / day', tag: 'Storage' },
+    { name: 'Grade B Beefsteak Tomatoes', location: 'Jos', qty: '120 crates', price: '₦3,200 / crate', tag: 'Fresh' },
+    { name: 'Cold Room — Riverside', location: 'Lagos', qty: '800 crate capacity', price: '₦380 / crate / day', tag: 'Storage' },
+    { name: 'Local Ibadan Variety', location: 'Ibadan', qty: '60 crates', price: '₦3,800 / crate', tag: 'Fresh' },
+  ];
+
+  const grid = document.getElementById('listingsGrid');
+  listings.forEach(l => {
+    const el = document.createElement('div');
+    el.className = 'listing-card';
+    el.innerHTML = `
+      <div class="listing-thumb" style="background:linear-gradient(135deg,#fbe3df,#f6cec7);"></div>
+      <div class="listing-body">
+        <h3>${l.name}</h3>
+        <p style="font-size:0.85rem;color:#666;">${l.location}</p>
+        <div class="listing-meta">
+          <span>${l.qty}</span>
+          <span class="listing-price">${l.price}</span>
+        </div>
+      </div>`;
+    grid.appendChild(el);
+  });
+
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<svg width="560" height="680" viewBox="0 0 560 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <radialGradient id="tb1" cx="35%" cy="28%" r="75%">
+      <stop offset="0%" stop-color="#ff6b5e"/>
+      <stop offset="55%" stop-color="#e6392f"/>
+      <stop offset="100%" stop-color="#b8251d"/>
+    </radialGradient>
+    <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6dae5f"/>
+      <stop offset="100%" stop-color="#2d6b3f"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eef3ea"/>
+      <stop offset="100%" stop-color="#dfe9da"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="560" height="680" rx="22" fill="url(#bgGrad)"/>
+
+  <!-- main vine stem -->
+  <path d="M330 0 C300 90 340 150 300 230 C270 300 320 360 280 440 C255 500 300 560 270 640" stroke="url(#lg1)" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+  <!-- leaves along vine -->
+  <path d="M330 60 C300 40 260 50 245 80 C270 65 300 68 320 85 C315 60 340 40 375 45 C355 42 335 50 330 60Z" fill="url(#lg1)"/>
+  <path d="M295 220 C265 205 228 213 213 243 C238 228 268 231 285 248 C280 223 305 203 340 208 C320 205 300 213 295 220Z" fill="url(#lg1)"/>
+  <path d="M275 420 C245 405 208 413 193 443 C218 428 248 431 265 448 C260 423 285 403 320 408 C300 405 280 413 275 420Z" fill="url(#lg1)"/>
+
+  <!-- tomatoes hanging -->
+  <circle cx="245" cy="140" r="70" fill="url(#tb1)"/>
+  <ellipse cx="220" cy="115" rx="18" ry="12" fill="#ffffff" opacity="0.2"/>
+
+  <circle cx="365" cy="270" r="58" fill="url(#tb1)"/>
+  <ellipse cx="345" cy="250" rx="15" ry="10" fill="#ffffff" opacity="0.2"/>
+
+  <circle cx="235" cy="380" r="82" fill="url(#tb1)"/>
+  <ellipse cx="205" cy="350" rx="20" ry="13" fill="#ffffff" opacity="0.2"/>
+
+  <circle cx="370" cy="500" r="64" fill="url(#tb1)"/>
+  <ellipse cx="348" cy="478" rx="16" ry="11" fill="#ffffff" opacity="0.2"/>
+
+  <circle cx="250" cy="600" r="55" fill="url(#tb1)"/>
+  <ellipse cx="230" cy="582" rx="14" ry="9" fill="#ffffff" opacity="0.2"/>
+</svg>

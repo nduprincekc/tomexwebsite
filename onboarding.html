@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to TOMEX — Choose Your Role</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="index.html" class="back-home" style="color:#1e4a26;">← Back to TOMEX</a>
+
+<main class="onboard-page">
+  <div class="onboard-left">
+    <div class="onboard-content">
+      <h1>Welcome to Tomex</h1>
+      <p>Connecting farmers, transporters, and buyers through one smart platform. Select your role to get started.</p>
+
+      <div class="role-grid" id="roleGrid">
+        <div class="role-card" data-role="farmer" tabindex="0" role="button" aria-pressed="false">
+          <div class="role-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="9" width="13" height="8" rx="1"/><path d="M14 12h4l3 2.5v2.5h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg></div>
+          <h3>I am a Farmer</h3>
+          <p>Sell your produce and book reliable transportation.</p>
+        </div>
+
+        <div class="role-card" data-role="buyer" tabindex="0" role="button" aria-pressed="false">
+          <div class="role-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="9" width="13" height="8" rx="1"/><path d="M14 12h4l3 2.5v2.5h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg></div>
+          <h3>I am a Buyer</h3>
+          <p>Source fresh produce directly from trusted farmers and suppliers.</p>
+        </div>
+
+        <div class="role-card tinted" data-role="storage" tabindex="0" role="button" aria-pressed="false">
+          <div class="role-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="9" width="13" height="8" rx="1"/><path d="M14 12h4l3 2.5v2.5h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg></div>
+          <h3>We are a Cold Room Storage Provider</h3>
+          <p>Store fresh produce safely and connect with farmers and buyers who need cold storage.</p>
+        </div>
+
+        <div class="role-card" data-role="logistics" tabindex="0" role="button" aria-pressed="false">
+          <div class="role-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="9" width="13" height="8" rx="1"/><path d="M14 12h4l3 2.5v2.5h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="17" cy="19" r="1.6"/></svg></div>
+          <h3>I am a Logistics Provider</h3>
+          <p>Offer transportation services and connect with farmers and buyers.</p>
+        </div>
+      </div>
+
+      <button class="btn btn-solid btn-block js-continue" id="continueBtn" disabled>Continue</button>
+    </div>
+  </div>
+
+  <div class="onboard-right">
+    <svg width="70%" viewBox="0 0 400 400" fill="none">
+      <circle cx="200" cy="150" r="90" fill="#2d6b3f" opacity="0.15"/>
+      <circle cx="230" cy="220" r="110" fill="#1e4a26" opacity="0.15"/>
+      <path d="M150 100c40-30 90-20 110 15" stroke="#1e4a26" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4"/>
+    </svg>
+  </div>
+</main>
+
+<script src="js/script.js"></script>
+<script>
+  // Pre-select role from query string if arriving from a homepage CTA
+  const params = new URLSearchParams(window.location.search);
+  const preselect = params.get('role');
+  if (preselect) {
+    const map = { farmer: 'farmer', buyer: 'buyer', storage: 'storage', logistics: 'logistics' };
+    const card = document.querySelector(`.role-card[data-role="${map[preselect] || preselect}"]`);
+    if (card) card.click();
+  }
+
+  document.getElementById('continueBtn').addEventListener('click', () => {
+    const selected = document.querySelector('.role-card.selected');
+    if (!selected) return;
+    window.location.href = 'login.html';
+  });
+</script>
+</body>
+</html>
